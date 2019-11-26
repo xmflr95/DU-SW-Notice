@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+  background-color: #F1F3F5;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* .box {
+  width: 100vw;
+  max-width:100%;
+} */
+
+.badge-num {
+  background-color: #A9E34B;
+}
+
+.arrow-img {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.footer-content p {
+  text-align: center;
+}
