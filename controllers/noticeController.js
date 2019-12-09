@@ -4,9 +4,9 @@ const Notice = require('../models/Notice');
 exports.home = async function(req, res) {
   let notice = new Notice();
   
-  let noticeData = await notice.getNotice();
-  let scholarData = await notice.getScholar();
-  let employData = await notice.getEmploy();
+  // let noticeData = await notice.getNotice();
+  // let scholarData = await notice.getScholar();
+  // let employData = await notice.getEmploy();
   
   // res.render('index', {
   //   notices: noticeData,
