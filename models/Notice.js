@@ -71,7 +71,7 @@ Notice.prototype.getNotice = function() {
     // console.log(data);    
     return data;
 
-  }, (error) => console.log(error));
+  }).catch(error => console.log(error.message));
 };
 
 // 장학정보 가져오기
@@ -127,7 +127,9 @@ Notice.prototype.getScholar = function () {
     }
 
     return data;
-  }, (error) => console.log(error));
+  }).catch(error => {
+    console.log(error.message);
+  });
 };
 
 // 취업정보 데이터 가져오기
@@ -183,7 +185,9 @@ Notice.prototype.getEmploy = function () {
     }  
 
     return data;
-  }, (error) => console.log(error));
+  }).catch(error => {
+    console.log(error.message);
+  });
 };
 
 module.exports = Notice;
