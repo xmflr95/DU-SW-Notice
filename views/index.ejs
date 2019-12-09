@@ -35,7 +35,131 @@
     </nav>
   
     <!-- 학사공지 -->
-    
+    <div class="mx-2 min-h-64 glider-contain">
+      <div>
+        <h1 class="inline-block mt-2 ml-4 sm:mt-6 sm:mb-4 sm:ml-4 text-2xl sm:text-4xl text-gray-900 font-bold">학사공지</h1>
+      </div>
+      <div class="box glider1 w-screen min-w-full">
+        <% notices.forEach(function(notice, index) {
+            if (index < 10) { %>
+        <div class="bg-white m-3 rounded-lg overflow-hidden shadow-lg">
+          <div class="card">
+            <div class="pl-3 pr-2 py-3 h-40 sm:h-48">
+              <p class="inline-block badge">
+                <% if (notice.number == '공지') { %>
+                  <span class="px-4 py-1 rounded-full bg-orange-500 text-white text-sm font-semibold tracking-wider"><%= notice.number %></span>
+                <% } else { %>
+                  <span class="px-4 py-1 rounded-full badge-num text-white text-sm font-semibold tracking-wider"><%= notice.number %></span>
+                <% } %>
+                <% if (notice.current == 'New') { %>
+                  <span class="px-4 py-1 rounded-full bg-yellow-400 text-white text-sm font-semibold tracking-wider"><%= notice.current %></span>
+                <% } %>                 
+              </p>
+              <h5 class="font-bold text-xl sm:text-2xl sm:text-dutitle my-2 truncate"><%= notice.title %></h5>
+              <p class="inline-block mt-10 sm:mt-16 ml-1"><%= notice.writer %> <%= notice.date %></p>
+              <a href="<%= notice.link %>" class="float-right mt-6 sm:mt-14 px-6 py-2 bg-dubtn hover:bg-dug1 rounded-lg text-white text-lg font-semibold" target="_blank" title="공지 보기">바로 가기</a>
+            </div>
+          </div>
+        </div>
+        <% }
+          index++;
+          }) %>
+        <div class="bg-white notice-card m-3 rounded-lg overflow-hidden shadow-lg h-40">
+          <a class="arrow-img inline-block" href="https://sw.daegu.ac.kr/hakgwa_home/sw/sub.php?menu=page&menu_id=30" target="_blank" title="소프트웨어전공 학사공지로 이동">
+            <img class="inline-block w-40 h-40" src="/assets/img/n_arrow.png" alt="Go to DU SW Notice Page">        
+          </a>
+        </div>
+      </div>
+      <button role="button" aria-label="Previous" class="glider-prev1"></button>
+      <button role="button" aria-label="Next" class="glider-next1"></button>
+    </div>
+  
+    <!-- 장학공지 -->
+    <div class="notice1 mx-2 min-h-60 glider-contain multiple">
+      <div>
+        <h1 class="inline-block mt-2 ml-4 sm:mt-6 sm:mb-4 sm:ml-4 text-2xl sm:text-4xl text-orange-500 font-bold">장학공지</h1>
+      </div>
+      <div class="box glider2 w-screen min-w-full">
+        <% scholars.forEach(function(scholar, index) {
+              if (index < 10) { %>
+        <div class="bg-white m-3 rounded-lg overflow-hidden shadow-lg">
+          <div class="card">
+            <div class="pl-3 pr-2 py-3 h-40 sm:h-48">
+              <p class="inline-block badge">
+                <% if (scholar.number == '공지') { %>
+                <span class="px-4 py-1 rounded-full bg-orange-500 text-white text-sm font-semibold"><%= scholar.number %></span>
+                <% } else { %>
+                <span class="px-4 py-1 rounded-full badge-num text-white text-sm font-semibold"><%= scholar.number %></span>
+                <% } %>
+                <% if (scholar.current == 'New') { %>
+                <span class="px-4 py-1 rounded-full bg-yellow-400 text-white text-sm font-semibold tracking-wider"><%= scholar.current %></span>
+                <% } %>
+              </p>
+              <h5 class="font-bold text-xl sm:text-2xl sm:text-dutitle my-2 truncate"><%= scholar.title %></h5>
+              <p class="inline-block mt-10 sm:mt-16 ml-1"><%= scholar.writer %> <%= scholar.date %></p>
+              <a href="<%= scholar.link %>"
+                class="float-right mt-6 sm:mt-14 px-6 py-2 bg-dubtn hover:bg-dug1 rounded-lg text-white text-lg font-semibold"
+                target="_blank" title="공지 보기">바로 가기</a>
+            </div>
+          </div>
+        </div>
+        <% }
+            index++;
+            }) %>
+        <div class="bg-white notice-card m-3 rounded-lg overflow-hidden shadow-lg h-40">
+          <a class="arrow-img inline-block" href="https://sw.daegu.ac.kr/hakgwa_home/sw/sub.php?menu=page&menu_id=1022"
+            target="_blank" title="소프트웨어전공 장학공지로 이동">
+            <img class="inline-block w-40 h-40" src="/assets/img/s_arrow.png" alt="Go to DU SW Notice Page">
+          </a>
+        </div>
+      </div>
+      <button role="button" aria-label="Previous" class="glider-prev2"></button>
+      <button role="button" aria-label="Next" class="glider-next2"></button>
+    </div>
+  
+    <!-- 취업정보 -->
+    <div class="notice1 mx-2 min-h-60 glider-contain">
+      <div>
+        <h1 class="inline-block mt-2 ml-4 sm:mt-6 sm:mb-4 sm:ml-4 text-2xl sm:text-4xl text-blue-500 font-bold">취업정보</h1>
+      </div>
+      <div class="box glider3 w-screen min-w-full">
+        <% employs.forEach(function(employ, index) {
+              if (index < 10) { %>
+        <div class="bg-white m-3 rounded-lg overflow-hidden shadow-lg">
+          <div class="card">
+            <div class="pl-3 pr-2 py-3 h-40 sm:h-48">
+              <p class="inline-block badge">
+                <% if (employ.number == '공지') { %>
+                <span class="px-4 py-1 rounded-full bg-orange-500 text-white text-sm font-semibold"><%= employ.number %></span>
+                <% } else { %>
+                <span class="px-4 py-1 rounded-full badge-num text-white text-sm font-semibold"><%= employ.number %></span>
+                <% } %>
+                <% if (employ.current == 'New') { %>
+                <span class="px-4 py-1 rounded-full bg-yellow-400 text-white text-sm font-semibold tracking-wider"><%= employ.current %></span>
+                <% } %>
+              </p>
+              <h5 class="font-bold text-xl sm:text-2xl sm:text-dutitle my-2 truncate"><%= employ.title %></h5>
+              <p class="inline-block mt-10 sm:mt-16 ml-1"><%= employ.writer %> <%= employ.date %></p>
+              <a href="<%= employ.link %>"
+                class="float-right mt-6 sm:mt-14 px-6 py-2 bg-dubtn hover:bg-dug1 rounded-lg text-white text-lg font-semibold"
+                target="_blank" title="공지 보기">바로 가기</a>
+            </div>
+          </div>
+        </div>
+        <% }
+            index++;
+            }) %>
+        <div class="bg-white notice-card m-3 rounded-lg overflow-hidden shadow-lg h-40">
+          <a class="arrow-img inline-block" href="https://sw.daegu.ac.kr/hakgwa_home/sw/sub.php?menu=page&menu_id=25"
+            target="_blank" title="소프트웨어전공 취업정보로 이동">
+            <img class="inline-block w-40 h-40" src="/assets/img/e_arrow.png" alt="Go to DU SW Notice Page">
+          </a>
+        </div>
+      </div>
+      <button role="button" aria-label="Previous" class="glider-prev3"></button>
+      <button role="button" aria-label="Next" class="glider-next3"></button>
+    </div>  
+  </div>
 
   <!-- Footer -->
   <footer class="flex items-center justify-center w-full h-10vh min-h-10v bg-dug1">
