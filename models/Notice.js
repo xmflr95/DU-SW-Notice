@@ -22,7 +22,11 @@ Notice.prototype.getNotice = function() {
   // return new Promise((resolve, reject) => {
   // }); 프로미스 이용. but axios자체가 프로미스를 반환해서 굳이 사용 할 필요 없음.
 
-  return axios.get(fullUrl).then(res => {
+  return axios({
+    method: 'GET',
+    url: fullUrl,
+    validateStatus: (status) => true
+  }).then(res => {
     if (res.status == 200) {
       let tableList = [];
       const $ = cheerio.load(res.data);
@@ -83,7 +87,11 @@ Notice.prototype.getScholar = function () {
   let url = `https://${major}.daegu.ac.kr/hakgwa_home/${major}/sub.php`;
   let fullUrl = `${url}?page=${this.page}&menu=page&menu_id=${scholarship}`;
 
-  return axios.get(fullUrl).then(res => {
+  return axios({
+      method: 'GET',
+      url: fullUrl,
+      validateStatus: (status) => true
+    }).then(res => {
     if (res.status == 200) {
       let tableList = [];
       const $ = cheerio.load(res.data);
@@ -141,7 +149,11 @@ Notice.prototype.getEmploy = function () {
   let url = `https://${major}.daegu.ac.kr/hakgwa_home/${major}/sub.php`;
   let fullUrl = `${url}?page=${this.page}&menu=page&menu_id=${employment}`;
 
-  return axios.get(fullUrl).then(res => {
+  return axios({
+      method: 'GET',
+      url: fullUrl,
+      validateStatus: (status) => true
+    }).then(res => {
     if (res.status == 200) {
       let tableList = [];
       const $ = cheerio.load(res.data);
