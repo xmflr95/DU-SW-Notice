@@ -3,10 +3,7 @@ const express = require('express');
 const app = express();
 
 // 포트 번호
-let PORT = process.env.PORT;
-if (PORT == null || PORT == "") { 
-  PORT = 3000;
-};
+let PORT = process.env.PORT || 3000;
 
 // Router 사용
 const router = require('./router');
