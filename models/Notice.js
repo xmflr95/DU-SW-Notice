@@ -1,9 +1,3 @@
-/* 
- * Notice Model
- * View - Controller - 'Model'
- * axios로 요청한 data를 받아 가공함
- */
-
 const axios = require('axios');
 const cheerio = require('cheerio');
 
