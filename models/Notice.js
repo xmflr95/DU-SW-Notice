@@ -24,6 +24,7 @@ Notice.prototype.getNotice = function() {
   // 게시판 Url
   let url = `https://${major}.daegu.ac.kr/hakgwa_home/${major}/sub.php`;
   let fullUrl = `${url}?page=${this.page}&menu=page&menu_id=${notice}`;
+  // https://sw.daegu.ac.kr/hakgwa_home/sw/sub.php?menu=page&menu_id=30
 
   // return new Promise((resolve, reject) => {
   // }); 프로미스 이용. but axios자체가 프로미스를 반환해서 굳이 사용 할 필요 없음.
